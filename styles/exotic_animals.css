@@ -1,5 +1,6 @@
 body {
-  background: navy;
+  /* background: navy; */
+  background: #2E8BC0;
   margin: 0;
   padding: 0;
 }
@@ -8,6 +9,7 @@ h1 {
   margin: 30px;
   text-align: center;
   color: bisque;
+  color: #ECF87F;
   font-size: 28px;
 
 }
@@ -24,7 +26,6 @@ figure {
   width: 25%;
   margin-left: 2%;
   display: inline-block;
-  /* margin-bottom: 20px; */
   vertical-align: top;
   padding: 5px;
   box-sizing: border-box;
@@ -33,17 +34,28 @@ figure {
   position: relative;
 }
 
+.fadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 500ms, opacity 500ms;
+}
+.fadeIn {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 500ms;
+}
+
 img {
   width: 100%;
 }
 
 figcaption {
-  display: none;
+  opacity: 0;
   position: absolute;
-  width: 200px;
-  height: 100px;
   border-radius: 3px;
-  background: grey;
-  color: aliceblue;
+  background: #4C5270;
+  color: white;
   z-index: 5;
+  padding: 15px;
+  text-align: justify;
 }
