@@ -1,26 +1,30 @@
 body {
   background: navy;
-
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   margin: 30px;
   text-align: center;
-  color: royalblue;
+  color: bisque;
   font-size: 28px;
 
 }
 
 #wrapper {
   display: block;
-  margin: 0px auto;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+
 
 }
 figure {
-  width: 22%;
+  width: 25%;
   margin-left: 2%;
   display: inline-block;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   vertical-align: top;
   padding: 5px;
   box-sizing: border-box;
