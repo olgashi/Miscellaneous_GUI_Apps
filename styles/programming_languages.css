@@ -1,0 +1,31 @@
+body {
+  background: #E0BA16;
+  text-align: center;
+
+}
+h1 {
+  color: #055C9D;
+
+}
+
+#wrapper {
+  width: 600px;
+  margin: 50px auto;
+  background: #DB9D6E;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.btn {
+  background: #055C9D;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+}
+

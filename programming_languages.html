@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Programming Languages</title>
+    <link rel="stylesheet" href="./styles/programming_languages.css" />
+  </head>
+  <body>
+    <h1>Programming Languages</h1>
+    <div id="wrapper"></div>
+    <script>
+      const languages = [
+        {
+          name: "Ruby",
+          description:
+            "Ruby is a dynamic, reflective, object-oriented, " +
+            "general-purpose programming language. It was designed and developed in the mid-1990s " +
+            "by Yukihiro Matsumoto in Japan. According to its creator, Ruby was influenced by Perl, " +
+            "Smalltalk, Eiffel, Ada, and Lisp. It supports multiple programming paradigms, " +
+            "including functional, object-oriented, and imperative. It also has a dynamic type " +
+            "system and automatic memory management.",
+        },
+
+        {
+          name: "JavaScript",
+          description:
+            "JavaScript is a high-level, dynamic, untyped, and interpreted " +
+            "programming language. It has been standardized in the ECMAScript language " +
+            "specification. Alongside HTML and CSS, JavaScript is one of the three core " +
+            "technologies of World Wide Web content production; the majority of websites employ " +
+            "it, and all modern Web browsers support it without the need for plug-ins. JavaScript " +
+            "is prototype-based with first-class functions, making it a multi-paradigm language, " +
+            "supporting object-oriented, imperative, and functional programming styles.",
+        },
+
+        {
+          name: "Go",
+          description:
+            "Go is a statically typed, compiled programming language designed " +
+            "at Google by Robert Griesemer, Rob Pike, and Ken Thompson. Go is syntactically " +
+            "similar to C, but with memory safety, garbage collection, structural typing, and " +
+            "CSP-style concurrency. The language is often referred to as Golang because of its " +
+            "domain name, golang.org, but the proper name is Go.",
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const wrapperDiv = document.getElementById("wrapper");
+        languages.forEach((language) => {
+          const divElement = document.createElement("div");
+
+          const headerElement = document.createElement("h3");
+          headerElement.textContent = `${language.name}`;
+
+          const descriptionElement = document.createElement("p");
+          descriptionElement.setAttribute("language-name", `${language.name}`);
+          descriptionElement.textContent = `${language.description.slice(
+            0,
+            120
+          )}...`;
+          descriptionElement.classList.add("less");
+
+          const button = document.createElement("input");
+          button.setAttribute("type", "submit");
+          button.setAttribute("value", "Show More");
+          button.classList.add("btn");
+          button.classList.add("show");
+
+          divElement.appendChild(headerElement);
+          divElement.appendChild(descriptionElement);
+          divElement.appendChild(button);
+
+          wrapperDiv.appendChild(divElement);
+        });
+
+        const allShowButtonsArr = Array.from(
+          document.querySelectorAll(".show")
+        );
+
+        allShowButtonsArr.forEach((btn) => {
+          btn.addEventListener("click", (event) => {
+            event.preventDefault();
+            const paragraphElement = btn.previousElementSibling;
+            const langageName = paragraphElement.getAttribute("language-name");
+            const languageDescription = languages.filter(
+              (lang) => lang.name === langageName
+            )[0].description;
+
+            if (!paragraphElement.classList.contains("full-description")) {
+              paragraphElement.textContent = `${languageDescription}`;
+              paragraphElement.classList.add("full-description");
+              btn.value = "Show Less";
+            } else {
+              paragraphElement.classList.remove("full-description");
+              paragraphElement.textContent = `${languageDescription.slice(
+                0,
+                120
+              )}...`;
+              btn.value = "Show More";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
