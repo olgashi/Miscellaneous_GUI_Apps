@@ -40,7 +40,6 @@
 
         const confirmationPromtElement = document.createElement('span');
         confirmationPromtElement.classList.add('confirmation-prompt');
-        // confirmationPromtElement.classList.add('show');
         confirmationPromtElement.classList.add('hide');
         confirmationPromtElement.textContent = 'Are you sure you want to delete this todo?';
 
@@ -66,6 +65,7 @@
         deleteTodoButtons.forEach(btn => {
           btn.addEventListener('click', event => {
             event.stopPropagation();
+
             const elementToDelete = event.target.parentElement;
             const todoId = elementToDelete.getAttribute('todo-id');
 
@@ -89,6 +89,7 @@
           
           noButton.addEventListener('click', event => {
             event.stopPropagation();
+
             confirmationPromtElement.classList.remove('show');
             confirmationPromtElement.classList.add('hide');
             overlay.style.display = 'none';
