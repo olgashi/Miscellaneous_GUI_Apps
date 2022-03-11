@@ -1,1 +1,1 @@
-A variety of small GUI applications that I created to practice HTML, CSS, Vanilla JavaScript
+A variety of small GUI applications that I created in order to practice HTML, CSS and Vanilla JavaScript.
